@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import MyGeoJSONMap from "./components/leaflet_maps/MapComponent";
-
+import MyChart from "./components/chartjs_charts/MyChart";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -33,6 +33,7 @@ function App() {
       </p>
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <MyGeoJSONMap />
+      <MyChart />
     </>
   );
 }
