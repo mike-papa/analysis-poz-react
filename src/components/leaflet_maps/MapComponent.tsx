@@ -57,7 +57,7 @@ const MyGeoJSONMap = () => {
     <MapContainer
       center={[52.0693, 19.0]}
       zoom={6}
-      className="h-[500px] w-[600px] bg-[#242424]"
+      className="h-[500px] w-[600px] bg-[#242424] z-0"
       scrollWheelZoom={false}
       dragging={false}
       touchZoom={false}

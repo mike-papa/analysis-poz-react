@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
     "w-full py-2 px-4 hover:bg-gray-700 border-b cursor-pointer";
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 right-0 h-full flex flex-col ">
+    <nav className="fixed top-0 right-0 h-full flex flex-col z-10">
       {/* Hamburger menu button */}
       <div
         className={`${
