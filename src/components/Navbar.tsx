@@ -6,12 +6,12 @@ const Navbar: React.FC = () => {
     "w-full py-2 px-4 hover:bg-gray-700 border-b cursor-pointer";
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 right-0 h-full flex flex-col z-10">
+    <nav className="fixed w-[250px] top-0 right-0 h-full flex flex-col z-50">
       {/* Hamburger menu button */}
       <div
         className={`${
           isSidebarOpen ? "bg-gray-800 text-white" : ""
-        } sm:hidden p-4`}
+        } md:hidden p-4 flex justify-end`}
       >
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -37,10 +37,11 @@ const Navbar: React.FC = () => {
       <div
         className={`${
           isSidebarOpen ? "block" : "hidden"
-        } h-full sm:block bg-gray-800 text-white shadow-lg`}
+        } h-full md:block bg-gray-800 text-white shadow-lg`}
       >
         <ul className="flex flex-col justify-start text-left p-4 space-y-4">
           {/* Navigation Links */}
+          <li className={listItemClasses}>Start</li>
           <li className={listItemClasses}>Przegląd</li>
           <li className={listItemClasses}>Typy Obiektów</li>
           <li className={listItemClasses}>Liczba Obiektów</li>
