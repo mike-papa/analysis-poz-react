@@ -11,7 +11,9 @@ function App() {
           <Navbar />
         </div>
         <div className="w-full md:w-[calc(100%-250px)]">
-          <LandingPage />
+          <section id="landing-page">
+            <LandingPage />
+          </section>
           <MyGeoJSONMap />
           <MyChart />
         </div>

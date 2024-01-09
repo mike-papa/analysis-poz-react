@@ -30,7 +30,9 @@ const Navbar: React.FC = () => {
 
         <ul className="flex flex-col justify-start text-left p-4 space-y-4">
           {/* Navigation Links */}
-          <li className={listItemClasses}>Start</li>
+          <li className={listItemClasses}>
+            <a href="#landing-page">Start</a>
+          </li>
           <li className={listItemClasses}>Przegląd</li>
           <li className={listItemClasses}>Typy Obiektów</li>
           <li className={listItemClasses}>Liczba Obiektów</li>
