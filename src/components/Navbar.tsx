@@ -1,44 +1,33 @@
 // Navbar.tsx
 import React, { useState } from "react";
+import ThemeSwitcher from "./ThemeSwitcher";
+import NavButton from "./NavButton";
 
 const Navbar: React.FC = () => {
   const listItemClasses =
-    "w-full py-2 px-4 hover:bg-gray-700 border-b cursor-pointer";
+    "w-full py-2 px-4 hover:text-light-three dark:hover:text-dark-three border-b border-black dark:border-white  cursor-pointer";
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <nav className="fixed w-[250px] top-0 right-0 h-full flex flex-col z-50">
-      {/* Hamburger menu button */}
+      {/* Hamburger menu button - visible when menu is closed */}
       <div
         className={`${
-          isSidebarOpen ? "bg-gray-800 text-white" : ""
+          isSidebarOpen ? "hidden" : ""
         } md:hidden p-4 flex justify-end`}
       >
-        <button
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="text-white focus:outline-none"
-        >
-          {/* Hamburger Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 5h14v2H3V5zm0 6h14v2H3v-2zm0 6h14v2H3v-2z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
+        <NavButton toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
       </div>
       {/* Sidebar */}
       <div
         className={`${
           isSidebarOpen ? "block" : "hidden"
-        } h-full md:block bg-gray-800 text-white shadow-lg`}
+        } h-full md:block dark:bg-dark-five bg-light-four text-black dark:text-white shadow-lg shadow-black dark:shadow-white`}
       >
+        {/* Hamburger menu button - visible when menu is open */}
+        <div className="p-4 flex justify-end">
+          <NavButton toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+        </div>
+
         <ul className="flex flex-col justify-start text-left p-4 space-y-4">
           {/* Navigation Links */}
           <li className={listItemClasses}>Start</li>
@@ -50,6 +39,9 @@ const Navbar: React.FC = () => {
           <li className={listItemClasses}>Poziom Cyfryzacji</li>
           <li className={listItemClasses}>Ranking Patronów</li>
         </ul>
+        <div className="flex items-center justify-center">
+          <ThemeSwitcher />
+        </div>
       </div>
     </nav>
   );

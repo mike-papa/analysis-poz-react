@@ -4,7 +4,10 @@ import stethoscope from "../assets/stethoscope.svg";
 import pills from "../assets/pillswebp.webp";
 const LandingPage = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 via-green-300 to-teal-200">
+    <div
+      className="relative h-screen flex items-center justify-center bg-gradient-to-r from-light-one via-light-two to-light-three
+      dark:from-dark-one dark:via-dark-two dark:to-dark-three"
+    >
       <img
         src={caduceus}
         alt="Caduceus"
@@ -20,7 +23,7 @@ const LandingPage = () => {
         alt="Pills"
         className="absolute w-[100px] md:w-[200px] left-10 bottom-10 opacity-70 z-0"
       />
-      <div className="z-10 text-white text-center p-12">
+      <div className="z-10 dark:text-white text-black  text-center p-12">
         <h1 className="text-6xl font-bold mb-6">
           2024 Analiza Podmiotów <br></br> z Aktualną Akredytacją<br></br>
           Ministra Zdrowia
