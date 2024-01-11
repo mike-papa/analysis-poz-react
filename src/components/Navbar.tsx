@@ -33,7 +33,9 @@ const Navbar: React.FC = () => {
           <li className={listItemClasses}>
             <a href="#landing-page">Start</a>
           </li>
-          <li className={listItemClasses}>Przegląd</li>
+          <li className={listItemClasses}>
+            <a href="#overview">Przegląd</a>
+          </li>
           <li className={listItemClasses}>Typy Obiektów</li>
           <li className={listItemClasses}>Liczba Obiektów</li>
           <li className={listItemClasses}>Liczba Ludności</li>

@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .custom-gradient {
+    @apply bg-custom-gradient;
+  }
+  .dark .custom-gradient-dark {
+    @apply bg-custom-gradient-dark;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -31,9 +31,14 @@ const LandingPage = () => {
         <p className="text-xl mb-4">
           Na podstawie danych z 26 listopada 2023 r.
         </p>
-        <button className="mt-4 bg-white text-gray-800 font-bold py-2 px-6 rounded-md hover:bg-gray-100 transition duration-300">
-          Przegląd
-        </button>
+        <div className="mt-12">
+          <a
+            href="#overview"
+            className="bg-white text-gray-800 font-bold py-2 px-6 rounded-md hover:bg-gray-100 transition duration-300"
+          >
+            Przegląd
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -3,16 +3,20 @@ import Navbar from "./components/Navbar";
 import MyGeoJSONMap from "./components/leaflet_maps/MapComponent";
 import MyChart from "./components/chartjs_charts/MyChart";
 import LandingPage from "./components/LandingPage";
+import Overview from "./components/Overview";
 function App() {
   return (
     <>
-      <div className="bg-[#242424]">
+      <div className="bg-light-six dark:bg-dark-six">
         <div className="">
           <Navbar />
         </div>
         <div className="w-full md:w-[calc(100%-250px)]">
           <section id="landing-page">
             <LandingPage />
+          </section>
+          <section id="overview">
+            <Overview />
           </section>
           <MyGeoJSONMap />
           <MyChart />
