@@ -1,30 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const ThemeSwitcher = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Check if user has set a preference in localStorage
-    const savedMode = localStorage.getItem("darkMode");
-    // If a saved value is found, parse it from JSON to a boolean.
-    // Otherwise, default to true (dark mode on).
-    return savedMode !== null ? JSON.parse(savedMode) : true;
-  });
-
-  useEffect(() => {
-    // Add or remove the 'dark' CSS class from the root document element
-    // depending on the 'isDarkMode' state value.
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    // Save the current dark mode state to 'localStorage'
-    localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
-    // This effect will re-run only if 'isDarkMode' changes.
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   return (
     <button onClick={toggleTheme}>
