@@ -51,7 +51,7 @@ const Overview = () => {
             Standardy akredytacyjne różnią się w zależności od typu podmiotu.
             DLa szpitali brane są pod uwagę m. in. ciągłość opieki, kontrola
             zakażeń, diagnostyka obrazowa czy odżywanie. Podczas gdy dla
-            obiektów podstawowa opieki zdrowotnej (POZ) brane są pod uwagę m.
+            obiektów podstawowej opieki zdrowotnej (POZ) brane są pod uwagę m.
             in. dostęp do wizyt domowych, dokumentacja medyczna czy
             infrastruktura. Wsyzstkie standardy można znaleźć na stronie
             internetowej{" "}
@@ -89,9 +89,9 @@ const Overview = () => {
           <p>
             Dla podmiotów wykonujących działalność leczniczą, akredytacja jest
             istotna, ponieważ stanowi dla nich wyróżnienie i potwierdza
-            utrzymywanie przez nich standardów medycznych. Może również wpływać
-            na reputację placówki na rynku, przyciągając pacjentów oraz
-            partnerów biznesowych.
+            utrzymywanie przez nich odpowiednich standardów opieki medycznej.
+            Posiadanie akredytacji może również wpływać na reputację placówki na
+            rynku, przyciągając pacjentów oraz partnerów biznesowych.
           </p>
         </div>
       </div>

@@ -8,7 +8,11 @@ const Navbar: React.FC = () => {
     "w-full py-2 px-4 hover:text-light-three dark:hover:text-dark-three border-b border-black dark:border-white  cursor-pointer";
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
-    <nav className="fixed w-[250px] top-0 right-0 h-full flex flex-col z-50">
+    <nav
+      className={`fixed top-0 right-0 h-full flex flex-col z-50 ${
+        isSidebarOpen ? "w-[250px]" : "md:w-[250px]"
+      }`}
+    >
       {/* Hamburger menu button - visible when menu is closed */}
       <div
         className={`${
@@ -31,12 +35,21 @@ const Navbar: React.FC = () => {
         <ul className="flex flex-col justify-start text-left p-4 space-y-4">
           {/* Navigation Links */}
           <li className={listItemClasses}>
-            <a href="#landing-page">Start</a>
+            <a href="#landing-page" className="w-full block">
+              Start
+            </a>
           </li>
           <li className={listItemClasses}>
-            <a href="#overview">Przegląd</a>
+            <a href="#overview" className="w-full block">
+              Przegląd
+            </a>
           </li>
-          <li className={listItemClasses}>Typy Obiektów</li>
+          <li className={listItemClasses}>
+            <a href="#entity-type-chart" className="w-full block">
+              Typy Obiektów
+            </a>
+          </li>
+
           <li className={listItemClasses}>Liczba Obiektów</li>
           <li className={listItemClasses}>Liczba Ludności</li>
           <li className={listItemClasses}>Oceny</li>

@@ -5,6 +5,7 @@ import MyChart from "./components/chartjs_charts/MyChart";
 import LandingPage from "./components/LandingPage";
 import Overview from "./components/Overview";
 import { ThemeProvider } from "./context/ThemeContext";
+import EntityTypeComponent from "./components/chartjs_charts/enity_type_chart/EntityTypeComponent";
 function App() {
   return (
     <>
@@ -19,6 +20,9 @@ function App() {
             </section>
             <section id="overview">
               <Overview />
+            </section>
+            <section id="entity-type-chart">
+              <EntityTypeComponent />
             </section>
             <MyGeoJSONMap />
             <MyChart />
