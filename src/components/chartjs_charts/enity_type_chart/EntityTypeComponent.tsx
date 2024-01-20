@@ -2,7 +2,7 @@ import EntityTypeChart from "./EntityTypeChart";
 
 const EntityTypeComponent: React.FC = () => {
   return (
-    <div className="min-h-screen text-black dark:text-white p-20">
+    <div className="pt-10 text-black dark:text-white">
       <h1 className="text-4xl font-extrabold mb-10 text-center">
         Typy Akredytowanych Podmiotów
       </h1>

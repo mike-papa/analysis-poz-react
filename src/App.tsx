@@ -6,6 +6,7 @@ import LandingPage from "./components/LandingPage";
 import Overview from "./components/Overview";
 import { ThemeProvider } from "./context/ThemeContext";
 import EntityTypeComponent from "./components/chartjs_charts/enity_type_chart/EntityTypeComponent";
+import GradesMapComponent from "./components/leaflet_maps/grades_map/GradesMapComponent";
 function App() {
   return (
     <>
@@ -23,6 +24,9 @@ function App() {
             </section>
             <section id="entity-type-chart">
               <EntityTypeComponent />
+            </section>
+            <section id="grades-map-component">
+              <GradesMapComponent />
             </section>
             <MyGeoJSONMap />
             <MyChart />
