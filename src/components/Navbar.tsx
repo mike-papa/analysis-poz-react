@@ -57,7 +57,11 @@ const Navbar: React.FC = () => {
             </a>
           </li>
           <li className={listItemClasses}>Poziom Cyfryzacji</li>
-          <li className={listItemClasses}>Ranking Patronów</li>
+          <li className={listItemClasses}>
+            <a href="#patrons-component" className="w-full block">
+              Ranking Patronów
+            </a>
+          </li>
         </ul>
         <div className="flex items-center justify-center">
           <ThemeSwitcher />

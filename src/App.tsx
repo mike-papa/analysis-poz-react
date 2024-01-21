@@ -7,6 +7,8 @@ import Overview from "./components/Overview";
 import { ThemeProvider } from "./context/ThemeContext";
 import EntityTypeComponent from "./components/chartjs_charts/enity_type_chart/EntityTypeComponent";
 import GradesMapComponent from "./components/leaflet_maps/grades_map/GradesMapComponent";
+import PatronsComponent from "./components/patrons/PatronsComponent";
+
 function App() {
   return (
     <>
@@ -28,8 +30,9 @@ function App() {
             <section id="grades-map-component">
               <GradesMapComponent />
             </section>
-            <MyGeoJSONMap />
-            <MyChart />
+            <section id="patrons-component">
+              <PatronsComponent />
+            </section>
           </div>
         </div>
       </ThemeProvider>
