@@ -2,7 +2,7 @@ import { MapContainer, GeoJSON, Marker, useMap } from "react-leaflet";
 import L, { LatLngExpression, Layer, StyleFunction } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import rawGeojsonData from "../wojewodztwa-medium.json"; // Load GeoJSON data for the map
-import scores from "./region-scores.json"; // Load scoring data used for styling regions
+import scores from "./mean_objects_score_by_type_and_voivodeship.json"; // Load scoring data used for styling regions
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
 
@@ -19,17 +19,18 @@ const GradesMap: React.FC = () => {
 
   // Function to determine the color based on a given score
   const getColor = (score: number) => {
-    switch (score) {
-      case 5:
-        return "#03fc13";
-      case 4:
-        return "#d3fc03";
-      case 3:
-        return "#fccf03";
-      case 2:
-        return "#fc7303";
-      default:
-        return "#fc0303";
+    if (score > 84) {
+      return "#03fc13";
+    } else if (score > 82) {
+      return "#d3fc03";
+    } else if (score > 80) {
+      return "#fccf03";
+    } else if (score > 78) {
+      return "#fc7303";
+    } else if (score > 76) {
+      return "#fc0303";
+    } else if (score > 74) {
+      return "#fc0303";
     }
   };
 
@@ -37,7 +38,7 @@ const GradesMap: React.FC = () => {
   const mapStyle: StyleFunction<any> = (feature) => {
     // Find the score for the region
     const score =
-      scores.find((o) => o.nazwa === feature?.properties.nazwa)?.score ?? 0; //If 'score' is 'undefined', use 0 as the default value
+      scores.find((o) => o.woj === feature?.properties.nazwa)?.Mean_all ?? 0; //If 'score' is 'undefined', use 0 as the default value
     // Return style with the corresponding color
     return {
       fillColor: getColor(score),
@@ -53,8 +54,8 @@ const GradesMap: React.FC = () => {
   // Handle layer events, such as binding popups with additional information
   const onEachFeature = (feature: GeoJSON.Feature, layer: Layer) => {
     const score = scores.find(
-      (o) => o.nazwa === feature.properties?.nazwa
-    )?.score;
+      (o) => o.woj === feature.properties?.nazwa
+    )?.Mean_all;
     if (feature.properties && feature.properties.nazwa) {
       layer.bindPopup(
         // Bind a popup with the region's name and score
@@ -79,7 +80,7 @@ const GradesMap: React.FC = () => {
   const createScoreMarkers = (geojsonData: GeoJSON.FeatureCollection) => {
     return geojsonData.features.map((feature: GeoJSON.Feature) => {
       const score =
-        scores.find((o) => o.nazwa === feature.properties?.nazwa)?.score ?? 0;
+        scores.find((o) => o.woj === feature.properties?.nazwa)?.Mean_all ?? 0;
       if (
         feature.geometry.type === "Polygon" ||
         feature.geometry.type === "MultiPolygon"
@@ -100,7 +101,7 @@ const GradesMap: React.FC = () => {
           <Marker
             key={feature.properties?.nazwa}
             position={center}
-            icon={createLabelIcon(score?.toString() ?? "")}
+            icon={createLabelIcon(Math.round(score).toString() ?? "")}
           />
         );
       } else {

@@ -1,0 +1,114 @@
+[
+  {
+    "woj": "dolnośląskie",
+    "JDP": 81.75,
+    "POZ": 84.8,
+    "SZPITAL": 80.93,
+    "Mean_all": 82.43
+  },
+  {
+    "woj": "kujawsko-pomorskie",
+    "JDP": 90.75,
+    "POZ": 81.5,
+    "SZPITAL": 82.8,
+    "Mean_all": 84.0
+  },
+  {
+    "woj": "lubelskie",
+    "JDP": 81.0,
+    "POZ": 83.5,
+    "SZPITAL": 82.2,
+    "Mean_all": 82.65
+  },
+  {
+    "woj": "lubuskie",
+    "JDP": 82.0,
+    "POZ": 75.0,
+    "SZPITAL": 78.0,
+    "Mean_all": 79.25
+  },
+  {
+    "woj": "mazowieckie",
+    "JDP": 80.0,
+    "POZ": 83.54,
+    "SZPITAL": 82.55,
+    "Mean_all": 83.17
+  },
+  {
+    "woj": "małopolskie",
+    "JDP": 90.33,
+    "POZ": 80.87,
+    "SZPITAL": 81.86,
+    "Mean_all": 81.91
+  },
+  {
+    "woj": "opolskie",
+    "JDP": 77.0,
+    "POZ": 81.33,
+    "SZPITAL": 83.0,
+    "Mean_all": 81.9
+  },
+  {
+    "woj": "podkarpackie",
+    "JDP": 88.0,
+    "POZ": 81.67,
+    "SZPITAL": 80.58,
+    "Mean_all": 82.32
+  },
+  {
+    "woj": "podlaskie",
+    "JDP": null,
+    "POZ": 84.72,
+    "SZPITAL": 78.0,
+    "Mean_all": 83.26
+  },
+  {
+    "woj": "pomorskie",
+    "JDP": 85.0,
+    "POZ": 81.71,
+    "SZPITAL": 81.12,
+    "Mean_all": 81.79
+  },
+  {
+    "woj": "warmińsko-mazurskie",
+    "JDP": 78.5,
+    "POZ": 80.0,
+    "SZPITAL": 85.0,
+    "Mean_all": 83.5
+  },
+  {
+    "woj": "wielkopolskie",
+    "JDP": 81.25,
+    "POZ": 84.4,
+    "SZPITAL": 80.24,
+    "Mean_all": 81.19
+  },
+  {
+    "woj": "zachodniopomorskie",
+    "JDP": 83.0,
+    "POZ": 82.89,
+    "SZPITAL": 78.33,
+    "Mean_all": 81.19
+  },
+  {
+    "woj": "łódzkie",
+    "JDP": null,
+    "POZ": 83.4,
+    "SZPITAL": 81.3,
+    "Mean_all": 82.35
+  },
+  {
+    "woj": "śląskie",
+    "JDP": 85.17,
+    "POZ": 80.94,
+    "SZPITAL": 83.05,
+    "Mean_all": 82.48
+  },
+  {
+    "woj": "świętokrzyskie",
+    "JDP": 84.5,
+    "POZ": 77.0,
+    "SZPITAL": 81.6,
+    "Mean_all": 81.22
+  }
+]

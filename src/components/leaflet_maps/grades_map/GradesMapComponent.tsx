@@ -1,4 +1,7 @@
-import GradesMap from "./GradesMap";
+import GradesMapAll from "./GradesMapAll";
+import GradesMapJDP from "./GradesMapJDP";
+import GradesMapPOZ from "./GradesMapPOZ";
+import GradesMapSzpital from "./GradesMapSzpital";
 
 const GradesMapComponent: React.FC = () => {
   return (
@@ -9,27 +12,23 @@ const GradesMapComponent: React.FC = () => {
       <div className="p-4 flex flex-col custom-md-1200px:flex-row justify-center items-center">
         <div className="">
           <div className="flex custom-md-1200px:h-[500px] custom-md-1200px:w-[600px] w-auto h-[500px]">
-            <GradesMap />
+            <GradesMapPOZ />
           </div>
 
           <div className="max-w-2xl w-full">
             <div className="text-lg space-y-6 text-center">
-              <p className="mb-6">
-                Średnie oceny wszystkich obiektów w różnych województwach.
-              </p>
+              <p className="mb-6">Średnie oceny wszystkich obiektów POZ</p>
             </div>
           </div>
         </div>
         <div>
           <div className="flex custom-md-1200px:h-[500px] custom-md-1200px:w-[600px] w-auto h-[500px]">
-            <GradesMap />
+            <GradesMapSzpital />
           </div>
 
           <div className="max-w-2xl w-full">
             <div className="text-lg space-y-6 text-center">
-              <p className="mb-6">
-                Średnie oceny wszystkich obiektów w różnych województwach.
-              </p>
+              <p className="mb-6">Średnie oceny wszystkich szpitali</p>
             </div>
           </div>
         </div>
@@ -37,27 +36,23 @@ const GradesMapComponent: React.FC = () => {
       <div className="p-4 flex flex-col custom-md-1200px:flex-row justify-center items-center">
         <div className="">
           <div className="flex custom-md-1200px:h-[500px] custom-md-1200px:w-[600px] w-auto h-[500px]">
-            <GradesMap />
+            <GradesMapJDP />
           </div>
 
           <div className="max-w-2xl w-full">
             <div className="text-lg space-y-6 text-center">
-              <p className="mb-6">
-                Średnie oceny wszystkich obiektów w różnych województwach.
-              </p>
+              <p className="mb-6">Średnie oceny wszystkich obiektów JDP</p>
             </div>
           </div>
         </div>
         <div>
           <div className="flex custom-md-1200px:h-[500px] custom-md-1200px:w-[600px] w-auto h-[500px]">
-            <GradesMap />
+            <GradesMapAll />
           </div>
 
           <div className="max-w-2xl w-full">
             <div className="text-lg space-y-6 text-center">
-              <p className="mb-6">
-                Średnie oceny wszystkich obiektów w różnych województwach.
-              </p>
+              <p className="mb-6">Średnie oceny wszystkich obiektów.</p>
             </div>
           </div>
         </div>
