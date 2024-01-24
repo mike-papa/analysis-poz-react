@@ -1,7 +1,5 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import MyGeoJSONMap from "./components/leaflet_maps/MapComponent";
-import MyChart from "./components/chartjs_charts/MyChart";
 import LandingPage from "./components/LandingPage";
 import Overview from "./components/Overview";
 import { ThemeProvider } from "./context/ThemeContext";
