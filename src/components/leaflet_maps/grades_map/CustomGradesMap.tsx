@@ -1,44 +1,32 @@
 import { MapContainer, GeoJSON, Marker, useMap } from "react-leaflet";
 import L, { LatLngExpression, Layer, StyleFunction } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import rawGeojsonData from "../wojewodztwa-medium.json"; // Load GeoJSON data for the map
-import scores from "./mean_objects_score_by_type_and_voivodeship.json"; // Load scoring data used for styling regions
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
+import rawGeojsonData from "../../../data/wojewodztwa-medium.json";
 
-// Cast the raw GeoJSON data to the appropriate FeatureCollection type
+interface CustomGradesMapProps {
+  scores: any[];
+  scoreProperty: string;
+  getColor: (score: number) => string;
+}
 const geojsonData: GeoJSON.FeatureCollection =
   rawGeojsonData as GeoJSON.FeatureCollection;
 
-// React functional component to render the map
-const GradesMap: React.FC = () => {
-  // Retrieve the current theme context to apply different styles based on the theme
+const CustomGradesMap: React.FC<CustomGradesMapProps> = ({
+  scores,
+  scoreProperty,
+  getColor,
+}) => {
   const { isDarkMode } = useContext(ThemeContext);
-
-  /*-------------------------------------------below color voivodships based on score -------------------------------------------*/
-
-  // Function to determine the color based on a given score
-  const getColor = (score: number) => {
-    if (score > 84) {
-      return "#03fc13";
-    } else if (score > 82) {
-      return "#d3fc03";
-    } else if (score > 80) {
-      return "#fccf03";
-    } else if (score > 78) {
-      return "#fc7303";
-    } else if (score > 76) {
-      return "#fc0303";
-    } else if (score > 74) {
-      return "#fc0303";
-    }
-  };
 
   // Define a style function for the GeoJSON layer based on the feature's score
   const mapStyle: StyleFunction<any> = (feature) => {
     // Find the score for the region
     const score =
-      scores.find((o) => o.woj === feature?.properties.nazwa)?.Mean_all ?? 0; //If 'score' is 'undefined', use 0 as the default value
+      scores.find((o) => o.woj === feature?.properties.nazwa)?.[
+        scoreProperty
+      ] ?? 0; //If 'score' is 'undefined', use 0 as the default value
     // Return style with the corresponding color
     return {
       fillColor: getColor(score),
@@ -53,9 +41,9 @@ const GradesMap: React.FC = () => {
 
   // Handle layer events, such as binding popups with additional information
   const onEachFeature = (feature: GeoJSON.Feature, layer: Layer) => {
-    const score = scores.find(
-      (o) => o.woj === feature.properties?.nazwa
-    )?.Mean_all;
+    const score = scores.find((o) => o.woj === feature.properties?.nazwa)?.[
+      scoreProperty
+    ];
     if (feature.properties && feature.properties.nazwa) {
       layer.bindPopup(
         // Bind a popup with the region's name and score
@@ -80,7 +68,9 @@ const GradesMap: React.FC = () => {
   const createScoreMarkers = (geojsonData: GeoJSON.FeatureCollection) => {
     return geojsonData.features.map((feature: GeoJSON.Feature) => {
       const score =
-        scores.find((o) => o.woj === feature.properties?.nazwa)?.Mean_all ?? 0;
+        scores.find((o) => o.woj === feature.properties?.nazwa)?.[
+          scoreProperty
+        ] ?? 0;
       if (
         feature.geometry.type === "Polygon" ||
         feature.geometry.type === "MultiPolygon"
@@ -115,9 +105,20 @@ const GradesMap: React.FC = () => {
 
   // Dynamically calculate zoom level based on window width
   const getResponsiveZoom = (): number => {
-    if (window.innerWidth < 768) return 5.5;
-    if (window.innerWidth >= 768 && window.innerWidth < 1024) return 5.5;
-    return 6;
+    const width = window.innerWidth;
+    if (width < 480) {
+      return 5.4;
+    } else if (width >= 0 && width < 1000) {
+      return 5.6;
+    } else if (width >= 0 && width < 1200) {
+      return 5.6;
+    } else if (width >= 1200 && width < 1300) {
+      return 5.6;
+    } else if (width >= 1300 && width < 1400) {
+      return 5.8;
+    } else {
+      return 6;
+    }
   };
 
   const [zoom, setZoom] = useState(getResponsiveZoom());
@@ -169,4 +170,4 @@ const GradesMap: React.FC = () => {
   );
 };
 
-export default GradesMap;
+export default CustomGradesMap;
