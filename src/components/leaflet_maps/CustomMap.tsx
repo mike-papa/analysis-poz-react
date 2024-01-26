@@ -2,21 +2,23 @@ import { MapContainer, GeoJSON, Marker, useMap } from "react-leaflet";
 import L, { LatLngExpression, Layer, StyleFunction } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../../../context/ThemeContext";
-import rawGeojsonData from "../../../data/wojewodztwa-medium.json";
+import { ThemeContext } from "../../context/ThemeContext";
+import rawGeojsonData from "../../data/wojewodztwa-medium.json";
 
-interface CustomGradesMapProps {
+interface CustomMapProps {
   scores: any[];
   scoreProperty: string;
   getColor: (score: number) => string;
+  popupText: string;
 }
 const geojsonData: GeoJSON.FeatureCollection =
   rawGeojsonData as GeoJSON.FeatureCollection;
 
-const CustomGradesMap: React.FC<CustomGradesMapProps> = ({
+const CustomMap: React.FC<CustomMapProps> = ({
   scores,
   scoreProperty,
   getColor,
+  popupText,
 }) => {
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -47,7 +49,7 @@ const CustomGradesMap: React.FC<CustomGradesMapProps> = ({
     if (feature.properties && feature.properties.nazwa) {
       layer.bindPopup(
         // Bind a popup with the region's name and score
-        `<strong>Województwo: ${feature.properties.nazwa}<br>Ocena: ${score}</strong>`,
+        `<strong>Województwo: ${feature.properties.nazwa}<br>${popupText}: ${score}</strong>`,
         { autoPan: false }
       );
     }
@@ -170,4 +172,4 @@ const CustomGradesMap: React.FC<CustomGradesMapProps> = ({
   );
 };
 
-export default CustomGradesMap;
+export default CustomMap;

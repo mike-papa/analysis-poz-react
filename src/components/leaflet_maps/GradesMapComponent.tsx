@@ -1,5 +1,5 @@
-import scores from "../../../data/mean_objects_score_by_type_and_voivodeship.json";
-import CustomGradesMap from "./CustomGradesMap";
+import scores from "../../data/mean_objects_score_by_type_and_voivodeship.json";
+import CustomMap from "./CustomMap";
 
 const GradesMapComponent: React.FC = () => {
   const getColor = (score: number) => {
@@ -29,10 +29,11 @@ const GradesMapComponent: React.FC = () => {
       <div className="flex flex-wrap justify-center items-stretch">
         <div className={mapContainer}>
           <div className={mapClass}>
-            <CustomGradesMap
+            <CustomMap
               scores={scores}
               scoreProperty="POZ"
               getColor={getColor}
+              popupText="Ocena"
             />
           </div>
           <p className={descriptionClass}>
@@ -41,20 +42,22 @@ const GradesMapComponent: React.FC = () => {
         </div>
         <div className={mapContainer}>
           <div className={mapClass}>
-            <CustomGradesMap
+            <CustomMap
               scores={scores}
               scoreProperty="SZPITAL"
               getColor={getColor}
+              popupText="Ocena"
             />
           </div>
           <p className={descriptionClass}>Średnie oceny wszystkich szpitali</p>
         </div>
         <div className={mapContainer}>
           <div className={mapClass}>
-            <CustomGradesMap
+            <CustomMap
               scores={scores}
               scoreProperty="JDP"
               getColor={getColor}
+              popupText="Ocena"
             />
           </div>
           <p className={descriptionClass}>
@@ -63,10 +66,11 @@ const GradesMapComponent: React.FC = () => {
         </div>
         <div className={mapContainer}>
           <div className={mapClass}>
-            <CustomGradesMap
+            <CustomMap
               scores={scores}
               scoreProperty="Mean_all"
               getColor={getColor}
+              popupText="Ocena"
             />
           </div>
           <p className={descriptionClass}>Średnie oceny wszystkich obiektów</p>

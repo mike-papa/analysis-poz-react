@@ -4,8 +4,9 @@ import LandingPage from "./components/LandingPage";
 import Overview from "./components/Overview";
 import { ThemeProvider } from "./context/ThemeContext";
 import EntityTypeComponent from "./components/chartjs_charts/enity_type_chart/EntityTypeComponent";
-import GradesMapComponent from "./components/leaflet_maps/grades_map/GradesMapComponent";
+import GradesMapComponent from "./components/leaflet_maps/GradesMapComponent";
 import PatronsComponent from "./components/patrons/PatronsComponent";
+import CountObjectsMapComponent from "./components/leaflet_maps/CountObjectsMapComponent";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             </section>
             <section id="entity-type-chart">
               <EntityTypeComponent />
+            </section>
+            <section id="count-objects-map-component">
+              <CountObjectsMapComponent />
             </section>
             <section id="grades-map-component">
               <GradesMapComponent />

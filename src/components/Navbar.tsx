@@ -49,7 +49,11 @@ const Navbar: React.FC = () => {
               Typy Obiektów
             </a>
           </li>
-          <li className={listItemClasses}>Liczba Obiektów</li>
+          <li className={listItemClasses}>
+            <a href="#count-objects-map-component" className="w-full block">
+              Liczba Obiektów
+            </a>
+          </li>
           <li className={listItemClasses}>Liczba Ludności</li>
           <li className={listItemClasses}>
             <a href="#grades-map-component" className="w-full block">
