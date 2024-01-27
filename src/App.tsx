@@ -7,6 +7,7 @@ import EntityTypeComponent from "./components/chartjs_charts/enity_type_chart/En
 import GradesMapComponent from "./components/leaflet_maps/GradesMapComponent";
 import PatronsComponent from "./components/patrons/PatronsComponent";
 import CountObjectsMapComponent from "./components/leaflet_maps/CountObjectsMapComponent";
+import CalculateObjectsPer100kMapComponent from "./components/leaflet_maps/CalculateObjectsPer100kMapComponent";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </section>
             <section id="count-objects-map-component">
               <CountObjectsMapComponent />
+            </section>
+            <section id="calculate-objects-per-100k-map-component">
+              <CalculateObjectsPer100kMapComponent />
             </section>
             <section id="grades-map-component">
               <GradesMapComponent />

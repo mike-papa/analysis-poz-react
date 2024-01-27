@@ -10,6 +10,7 @@ interface CustomMapProps {
   scoreProperty: string;
   getColor: (score: number) => string;
   popupText: string;
+  isRoundedScore?: boolean;
 }
 const geojsonData: GeoJSON.FeatureCollection =
   rawGeojsonData as GeoJSON.FeatureCollection;
@@ -19,6 +20,7 @@ const CustomMap: React.FC<CustomMapProps> = ({
   scoreProperty,
   getColor,
   popupText,
+  isRoundedScore = true,
 }) => {
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -93,7 +95,11 @@ const CustomMap: React.FC<CustomMapProps> = ({
           <Marker
             key={feature.properties?.nazwa}
             position={center}
-            icon={createLabelIcon(Math.round(score).toString() ?? "")}
+            icon={
+              isRoundedScore
+                ? createLabelIcon(Math.round(score).toString() ?? "")
+                : createLabelIcon(score.toString() ?? "")
+            }
           />
         );
       } else {

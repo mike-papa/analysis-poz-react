@@ -54,7 +54,14 @@ const Navbar: React.FC = () => {
               Liczba Obiektów
             </a>
           </li>
-          <li className={listItemClasses}>Liczba Ludności</li>
+          <li className={listItemClasses}>
+            <a
+              href="#calculate-objects-per-100k-map-component"
+              className="w-full block"
+            >
+              Liczba Obiektów na 100 tys. mieszkańców
+            </a>
+          </li>
           <li className={listItemClasses}>
             <a href="#grades-map-component" className="w-full block">
               Oceny
