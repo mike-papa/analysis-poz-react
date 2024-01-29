@@ -8,6 +8,7 @@ import GradesMapComponent from "./components/leaflet_maps/GradesMapComponent";
 import PatronsComponent from "./components/patrons/PatronsComponent";
 import CountObjectsMapComponent from "./components/leaflet_maps/CountObjectsMapComponent";
 import CalculateObjectsPer100kMapComponent from "./components/leaflet_maps/CalculateObjectsPer100kMapComponent";
+import WebScoresDistributionChart from "./components/chartjs_charts/WebScoresDistributionChart";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </section>
             <section id="grades-map-component">
               <GradesMapComponent />
+            </section>
+            <section id="grades-map-component">
+              <WebScoresDistributionChart />
             </section>
             <section id="patrons-component">
               <PatronsComponent />
