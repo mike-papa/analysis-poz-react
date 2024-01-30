@@ -2,6 +2,8 @@ import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import distribution from "../../data/url_scores_distributions.json";
 import Chart, { ChartEvent, LegendElement, LegendItem } from "chart.js/auto";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const url_performance_score = distribution.map(
   (item) => item.url_performance_score * 100
@@ -19,6 +21,8 @@ const average_website_score = distribution.map(
 );
 
 const DataDistributionChart = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   // Histogram creation - calculating the distribution
   const getHistogram = (data: number[]) => {
     const histogramData = Array<number>(100).fill(0);
@@ -79,8 +83,8 @@ const DataDistributionChart = () => {
         label: "Średni wynik stron internetowych",
         data: AverageWebsiteScoreHistogram,
         fill: true,
-        backgroundColor: "white",
-        borderColor: "white",
+        backgroundColor: "blue",
+        borderColor: "blue",
         borderWidth: 1,
       },
     ],
@@ -140,7 +144,7 @@ const DataDistributionChart = () => {
         display: true,
         position: "bottom" as "top" | "left" | "right" | "bottom" | "center",
         labels: {
-          color: "white",
+          color: `${isDarkMode ? "white" : "black"}`,
           font: {
             size: 14,
           },
