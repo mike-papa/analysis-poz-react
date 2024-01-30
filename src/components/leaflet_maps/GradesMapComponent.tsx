@@ -1,5 +1,6 @@
 import scores from "../../data/mean_objects_score_by_type_and_voivodeship.json";
 import CustomMap from "./CustomMap";
+import EntititiesScoresDistributionChart from "../chartjs_charts/EntitiesScoresDistributionChart";
 
 const GradesMapComponent: React.FC = () => {
   const getColor = (score: number) => {
@@ -74,6 +75,12 @@ const GradesMapComponent: React.FC = () => {
             />
           </div>
           <p className={descriptionClass}>Średnie oceny wszystkich obiektów</p>
+        </div>
+        <div className=" w-full ">
+          <h1 className="text-xl font-extrabold mb-5 text-center">
+            Rozkład ocen wszystkich obiektów
+          </h1>
+          <EntititiesScoresDistributionChart />
         </div>
       </div>
     </div>
