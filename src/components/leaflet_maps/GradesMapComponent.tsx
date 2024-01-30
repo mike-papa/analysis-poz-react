@@ -76,7 +76,7 @@ const GradesMapComponent: React.FC = () => {
           </div>
           <p className={descriptionClass}>Średnie oceny wszystkich obiektów</p>
         </div>
-        <div className=" w-full ">
+        <div className=" w-full mt-14 mb-14">
           <h1 className="text-xl font-extrabold mb-5 text-center">
             Rozkład ocen wszystkich obiektów
           </h1>

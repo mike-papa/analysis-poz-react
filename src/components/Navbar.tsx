@@ -67,7 +67,14 @@ const Navbar: React.FC = () => {
               Oceny
             </a>
           </li>
-          <li className={listItemClasses}>Poziom Cyfryzacji</li>
+          <li className={listItemClasses}>
+            <a
+              href="#digitization-analysis-map-component"
+              className="w-full block"
+            >
+              Poziom Cyfryzacji
+            </a>
+          </li>
           <li className={listItemClasses}>
             <a href="#patrons-component" className="w-full block">
               Ranking Patronów

@@ -1,12 +1,9 @@
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
-import distribution from "../../data/url_scores_distributions.json";
+import distribution from "../../data/score_distribution.json";
 import Chart, { ChartEvent, LegendElement, LegendItem } from "chart.js/auto";
 
-const entities_scores = distribution.map(
-  (item) => item.url_performance_score * 100
-);
-
+const entities_scores = distribution.map((item) => item);
 const DataDistributionChart = () => {
   // Histogram creation - calculating the distribution
   const getHistogram = (data: number[]) => {
@@ -114,7 +111,7 @@ const DataDistributionChart = () => {
         stepSize: 2,
       },
       x: {
-        min: 21,
+        min: 75,
         max: 100,
         stepSize: 1,
       },
