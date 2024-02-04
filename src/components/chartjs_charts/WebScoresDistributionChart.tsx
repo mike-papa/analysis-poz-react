@@ -113,6 +113,7 @@ const DataDistributionChart = () => {
     legendItem: LegendItem,
     legend: LegendElement<"bar">
   ) => {
+    e = e;
     const index = legendItem.datasetIndex;
     const ci = legend.chart;
     if (typeof index !== "number") {
@@ -176,9 +177,14 @@ const DataDistributionChart = () => {
         tension: 0.6,
       },
     },
+    maintainAspectRatio: false,
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div className="min-h-[600px]">
+      <Bar data={data} options={options} />
+    </div>
+  );
 };
 
 export default DataDistributionChart;

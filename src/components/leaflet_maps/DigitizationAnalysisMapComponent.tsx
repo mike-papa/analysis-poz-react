@@ -139,7 +139,7 @@ const DigitizationAnalysisMapComponent: React.FC = () => {
         </div>
         <div className=" w-full mt-14 mb-14">
           <h1 className="text-xl font-extrabold mb-5 text-center">
-            Średnie oceny wszystkich stron internetowych w województwach
+            Rozkład ocen wszystkich stron internetowych
           </h1>
           <WebScoresDistributionChart />
         </div>
